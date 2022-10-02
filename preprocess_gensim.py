@@ -25,9 +25,3 @@ tx = 'Consider the data for attribute“weight”:   Partition the data using eq
 
 processed_docs = pp(tx)
 print(processed_docs)
-#Converting text to bag of words
-dictionary = gensim.corpora.Dictionary(processed_docs)
-
-bow_corpus = [dictionary.doc2bow(doc) for doc in processed_docs]
-
-print(bow_corpus)
