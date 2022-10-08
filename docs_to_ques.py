@@ -31,8 +31,9 @@ for eachl in dlist:
         joinstr = prevstr + ' ' + curstr
         dict[ques] = joinstr
 
-for key,ele in dict.items():
-    print(key, ' : ', ele)
+if __name__ == "__main__":
+    for key,ele in dict.items():
+        print(key, ' : ', ele)
 
 
 
