@@ -20,6 +20,12 @@ prepro_data = []
 for key,ele in dict.items():
     prepro_data.append(pp(ele))
 
+pre_with_no_dup = []
+
+for pre in prepro_data:
+    res = []
+    [res.append(x) for x in pre if x not in res]
+    pre_with_no_dup.append(res)
+
 if __name__ == "__main__":
-    for pre in prepro_data:
-        print(pre)
+    print(pre_with_no_dup)
