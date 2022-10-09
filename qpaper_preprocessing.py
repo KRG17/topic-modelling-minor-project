@@ -21,4 +21,5 @@ for key,ele in dict.items():
     prepro_data.append(pp(ele))
 
 if __name__ == "__main__":
-    print(prepro_data)
+    for pre in prepro_data:
+        print(pre)
