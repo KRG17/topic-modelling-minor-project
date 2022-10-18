@@ -1,7 +1,9 @@
 import gensim
 from nltk.stem import WordNetLemmatizer
 from docs_to_ques import dict
+# import nltk
 # nltk.download('omw-1.4')
+# nltk.download('wordnet')
 def ls(text):
     return WordNetLemmatizer().lemmatize(text, pos='v')
 
