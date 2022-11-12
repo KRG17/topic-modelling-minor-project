@@ -1,6 +1,6 @@
 import gensim
 from nltk.stem import WordNetLemmatizer
-from docs_to_ques import dict
+from docs_to_ques import get_dict
 # import nltk
 # nltk.download('omw-1.4')
 # nltk.download('wordnet')
@@ -18,16 +18,22 @@ def pp(text):
     return result
 
 # print("\n")
-prepro_data = []
-for key,ele in dict.items():
-    prepro_data.append(pp(ele))
 
-pre_with_no_dup = []
+def qp_pre(filename):
+    prepro_data = []
+    dict = get_dict(filename)
+    for key,ele in dict.items():
+        prepro_data.append(pp(ele))
 
-for pre in prepro_data:
-    res = []
-    [res.append(x) for x in pre if x not in res]
-    pre_with_no_dup.append(res)
+    pre_with_no_dup = []
+
+    for pre in prepro_data:
+        res = []
+        [res.append(x) for x in pre if x not in res]
+        pre_with_no_dup.append(res)
+
+    return prepro_data
 
 if __name__ == "__main__":
-    print(pre_with_no_dup)
+    pre_data = qp_pre("T1.docx")
+    print(pre_data)

@@ -1,7 +1,8 @@
 import gensim
 from gensim import corpora
-from qpaper_preprocessing import prepro_data
+from qpaper_preprocessing import qp_pre
 
+prepro_data = qp_pre("T1.docx")
 dict_ = corpora.Dictionary(prepro_data)
 
 # print(dict_)
