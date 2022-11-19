@@ -1,4 +1,5 @@
 import gensim
+import numpy as np
 from gensim import corpora
 from qpaper_preprocessing import qp_pre
 
