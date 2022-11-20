@@ -30,3 +30,17 @@ for i in ldamodel[doc_term_matrix]:
 
 # lda_model =  gensim.models.LdaMulticore(doc_term_matrix, num_topics = 8, id2word = dict_, passes = 10, workers = 2)
 # print(lda_model.print_topic())
+
+# topicwise_words = []
+# topics = ldamodel.show_topics(formatted=False)
+# print(topics)
+# # print(type(topics))
+#
+# for i in range(len(topics)):
+#     topic_words = dict(topics[i][1])
+#     word = []
+#     for ky in topic_words:
+#         word.append(ky)
+#     topicwise_words.append(word)
+#
+# print(topicwise_words)

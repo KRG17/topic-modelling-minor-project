@@ -13,15 +13,19 @@ docs = qp_pre("T1.docx")
 
 # create dictionary of all words in all documents
 dictionary = gensim.corpora.Dictionary(docs)
+# print(dictionary)
+# print(len(docs[0]) + len(docs[1]) + len(docs[2]) + len(docs[3]) + len(docs[4]))
 
 # filter extreme cases out of dictionary
 # dictionary.filter_extremes(no_below=15, no_above=0.5, keep_n=100000)
 
 # create variable containing length of dictionary/vocab
 vocab_length = len(dictionary)
+# print(vocab_length)
 
 # create BOW dictionary
 bow_corpus = [dictionary.doc2bow(doc) for doc in docs]
+# print(bow_corpus)
 
 # initialize GSDMM
 gsdmm = MovieGroupProcess(K=10, alpha=0.1, beta=0.3, n_iters=10)
@@ -33,10 +37,12 @@ y = gsdmm.fit(docs, vocab_length)
 
 # print number of documents per topic
 doc_count = np.array(gsdmm.cluster_doc_count)
+# print(gsdmm.cluster_doc_count)
 print('Number of documents per topic :', doc_count)
 
 # Topics sorted by the number of document they are allocated to
 top_index = doc_count.argsort()[-15:][::-1]
+# print(doc_count.argsort())
 print('Most important clusters (by number of docs inside):', top_index)
 
 # define function to get top words per topic
@@ -59,3 +65,4 @@ def top_words(cluster_word_distribution, top_cluster, values):
 
 # get top words in topics
 top_words(gsdmm.cluster_word_distribution, top_index, 8)
+# print(gsdmm.cluster_word_distribution)
