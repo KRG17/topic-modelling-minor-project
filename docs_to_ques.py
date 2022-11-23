@@ -23,8 +23,8 @@ def get_dict(filename):
             continue
         # print(eachl[0])
         if eachl[0] == 'Q':
-            ques = eachl[0:2]
-            dict[ques] = eachl.split(']')[2]
+            ques = eachl.split('.')[0]
+            dict[ques] = eachl.split('.')[1]
             flag = 1
         elif flag == 1:
             prevstr = dict[ques]
@@ -34,7 +34,7 @@ def get_dict(filename):
     return dict
 
 if __name__ == "__main__":
-    dict = get_dict("T1.docx")
+    dict = get_dict("1.docx")
     for key,ele in dict.items():
         print(key, ' : ', ele)
 

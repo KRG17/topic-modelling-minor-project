@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import gensim
 from gsdmm import MovieGroupProcess
-from qpaper_preprocessing import qp_pre
+from collect_data import get_whole_data
 
-docs = qp_pre("T1.docx")
+docs = get_whole_data('Science')
 # df = pd.DataFrame(pre_data)
 
 # cast tweets to numpy array
@@ -28,7 +28,7 @@ bow_corpus = [dictionary.doc2bow(doc) for doc in docs]
 # print(bow_corpus)
 
 # initialize GSDMM
-gsdmm = MovieGroupProcess(K=10, alpha=0.1, beta=0.3, n_iters=10)
+gsdmm = MovieGroupProcess(K=15, alpha=0.1, beta=0.3, n_iters=30)
 # print(gsdmm)
 
 # fit GSDMM model

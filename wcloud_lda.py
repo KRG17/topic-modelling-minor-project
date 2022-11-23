@@ -12,7 +12,7 @@ topics = ldamodel.show_topics(formatted=False)
 print("dfvhkdfnljsdfgn")
 print(topics)
 
-fig, axes = plt.subplots(2, 3, figsize=(10,10), sharex=True, sharey=True)
+fig, axes = plt.subplots(1, len(topics), figsize=(10,10), sharex=True, sharey=True)
 
 for i, ax in enumerate(axes.flatten()):
     fig.add_subplot(ax)

@@ -21,3 +21,4 @@ for fold in list_of_folders:
         print(word)
         print(topic)
         print()
+    os.chdir("..")

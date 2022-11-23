@@ -35,5 +35,6 @@ def qp_pre(filename):
     return prepro_data
 
 if __name__ == "__main__":
-    pre_data = qp_pre("T1.docx")
-    print(pre_data)
+    pre_data = qp_pre("1.docx")
+    for pre in pre_data:
+        print(pre)
