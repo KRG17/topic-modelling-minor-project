@@ -4,8 +4,10 @@ import numpy as np
 import gensim
 from gsdmm import MovieGroupProcess
 from qpaper_preprocessing import qp_pre
+from n_gram import ng
 
-docs = qp_pre("T1.docx")
+docs = ng("T1.docx")
+# docs = qp_pre("T1.docx")
 # df = pd.DataFrame(pre_data)
 
 # cast tweets to numpy array

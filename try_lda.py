@@ -1,8 +1,10 @@
 import gensim
 from gensim import corpora
 from qpaper_preprocessing import qp_pre
+from n_gram import ng
 
-prepro_data = qp_pre("T1.docx")
+# prepro_data = qp_pre("T1.docx")
+prepro_data = ng("T1.docx")
 dict_ = corpora.Dictionary(prepro_data)
 
 # print(dict_)
