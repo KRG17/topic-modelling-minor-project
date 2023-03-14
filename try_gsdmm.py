@@ -5,7 +5,7 @@ import gensim
 from gsdmm import MovieGroupProcess
 from qpaper_preprocessing import qp_pre
 
-docs = qp_pre("T1.docx")
+docs = qp_pre("all3.docx")
 # df = pd.DataFrame(pre_data)
 
 # cast tweets to numpy array
