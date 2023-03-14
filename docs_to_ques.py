@@ -23,7 +23,8 @@ def get_dict(filename):
             continue
         # print(eachl[0])
         if eachl[0] == 'Q':
-            ques = eachl[0:3]
+            # ques = eachl[0:2]              # previously used - for upto Q9 as 2 space will be required
+            ques = eachl[0:3]                # for combine of 3 test paper as ques will be more than 9, so Q10 will need 3 space
             dict[ques] = eachl.split(']')[2]
             flag = 1
         elif flag == 1:
