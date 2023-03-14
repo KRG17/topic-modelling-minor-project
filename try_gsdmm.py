@@ -6,7 +6,7 @@ from gsdmm import MovieGroupProcess
 from qpaper_preprocessing import qp_pre
 from n_gram import ng
 
-docs = ng("T1.docx")
+docs = ng("all3.docx")
 # docs = qp_pre("T1.docx")
 # df = pd.DataFrame(pre_data)
 
@@ -30,7 +30,7 @@ bow_corpus = [dictionary.doc2bow(doc) for doc in docs]
 # print(bow_corpus)
 
 # initialize GSDMM
-gsdmm = MovieGroupProcess(K=10, alpha=0.1, beta=0.3, n_iters=10)
+gsdmm = MovieGroupProcess(K=15, alpha=0.1, beta=0.3, n_iters=10)
 # print(gsdmm)
 
 # fit GSDMM model

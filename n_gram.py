@@ -18,7 +18,7 @@ def ng(filename):
     return out
 
 if __name__ == "__main__":
-    output = ng("T1.docx")
+    output = ng("all3.docx")
     # print()
     # print(output)
     # print()

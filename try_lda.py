@@ -4,7 +4,7 @@ from qpaper_preprocessing import qp_pre
 from n_gram import ng
 
 # prepro_data = qp_pre("T1.docx")
-prepro_data = ng("T1.docx")
+prepro_data = ng("all3.docx")
 dict_ = corpora.Dictionary(prepro_data)
 
 # print(dict_)
@@ -18,8 +18,8 @@ doc_term_matrix = [dict_.doc2bow(i) for i in prepro_data]
 #
 Lda = gensim.models.ldamodel.LdaModel
 
-ldamodel = Lda(doc_term_matrix, num_topics=6, id2word = dict_, passes=1, random_state=0, eval_every=None)
-
+ldamodel = Lda(doc_term_matrix, num_topics=15, id2word = dict_, passes=1, random_state=0, eval_every=None)
+print(len(prepro_data))
 print(ldamodel.print_topics())
 
 for i in ldamodel.print_topics(num_topics=len(prepro_data), num_words=5):
